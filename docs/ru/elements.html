@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Стихии</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="elements">
+    <nav class="langs">
+        <a href="../en/elements.html" hreflang="en">EN</a>
+        <span class="lang-current">RU</span>
+        <a href="../de/elements.html" hreflang="de">DE</a>
+    </nav>
+    <a class="back" href="index.html">назад</a>
+
+    <h1>Стихии:</h1>
+    <p class="text">Привет! Стихии это механика не из ванильного днд, но надеюсь она вам понравиться и не убьёт интерес. Хорошей игры! </p>
+    <!-- father's code-->
+    <div class="grid">
+        <svg class="arrows" viewBox="0 0 420 420">
+            <defs>
+              <marker id="arrowhead" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="5" refY="4.5" orient="auto">
+                  <path d="M0,0.5 L8,4.5 L0,8.5 Z" fill="#5b7d94"/>
+              </marker>
+            </defs>
+            <g fill="none" stroke="#5b7d94" stroke-width="2.5" stroke-linecap="round" opacity="0.8" marker-end="url(#arrowhead)">
+              <!-- top -> right -->
+              <path d="M305.7,98.8 Q315.1,104.9 321.2,114.3"/>
+              <!-- right -> bottom -->
+              <path d="M321.2,305.7 Q315.1,315.1 305.7,321.2"/>
+              <!-- bottom -> left -->
+              <path d="M114.3,321.2 Q104.9,315.1 98.8,305.7"/>
+              <!-- left -> top -->
+              <path d="M98.8,114.3 Q104.9,104.9 114.3,98.8"/>
+            </g>
+        </svg>
+        <div class="diamond diamond--top"></div>
+        <div class="diamond diamond--left"></div>
+        <div class="diamond diamond--right"></div>
+        <div class="diamond diamond--bottom"></div>
+    </div>
+    <!-- father's code-->
+    <p class="text">Итак сверху вы видите изображение с 4 стихииями. Стрелки между ними указывают на превосходство стихии. Огонь подовляет Стазис, Стазис подовляет
+        Пустоту, Пустота подовляет Электричество, а Электричество замыкает цикл, подавляя Огонь. Направление стрелок указывает на доминациюу одной стихии над
+        другой. Доминирующий тип магии наносит цели +1 к итоговому урону за каждый кубик. Атакующий получает от уязвимой стихии меньше урона и максимальный
+        результат на кубе урона врага снижается на 1 (выпавшая 4 считается за 3, а 6 считается за 5). Однако эта уязвимость влияет преимущественно на чистый
+        урон. (накладываемые статус-эффекты и аномалии могут игнорировать эту механику.)</p>
+</body>
+</html>

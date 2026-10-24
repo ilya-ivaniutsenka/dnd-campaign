@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elements</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="elements">
+    <nav class="langs">
+        <span class="lang-current">EN</span>
+        <a href="../ru/elements.html" hreflang="ru">RU</a>
+        <a href="../de/elements.html" hreflang="de">DE</a>
+    </nav>
+    <a class="back" href="index.html">back</a>
+
+    <h1>Elements:</h1>
+    <p class="text">Hi! Elements are a mechanic that is not from vanilla D&amp;D, but I hope you like it and it will not kill the fun. Have a good game! </p>
+    <!-- father's code-->
+    <div class="grid">
+        <svg class="arrows" viewBox="0 0 420 420">
+            <defs>
+              <marker id="arrowhead" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="5" refY="4.5" orient="auto">
+                  <path d="M0,0.5 L8,4.5 L0,8.5 Z" fill="#5b7d94"/>
+              </marker>
+            </defs>
+            <g fill="none" stroke="#5b7d94" stroke-width="2.5" stroke-linecap="round" opacity="0.8" marker-end="url(#arrowhead)">
+              <!-- top -> right -->
+              <path d="M305.7,98.8 Q315.1,104.9 321.2,114.3"/>
+              <!-- right -> bottom -->
+              <path d="M321.2,305.7 Q315.1,315.1 305.7,321.2"/>
+              <!-- bottom -> left -->
+              <path d="M114.3,321.2 Q104.9,315.1 98.8,305.7"/>
+              <!-- left -> top -->
+              <path d="M98.8,114.3 Q104.9,104.9 114.3,98.8"/>
+            </g>
+        </svg>
+        <div class="diamond diamond--top"></div>
+        <div class="diamond diamond--left"></div>
+        <div class="diamond diamond--right"></div>
+        <div class="diamond diamond--bottom"></div>
+    </div>
+    <!-- father's code-->
+    <p class="text">So, above you can see a picture with the 4 elements. The arrows between them show which element has the upper hand. Fire suppresses Stasis, Stasis
+        suppresses Void, Void suppresses Electricity, and Electricity closes the cycle by suppressing Fire. The direction of the arrows shows the dominance of
+        one element over another. The dominant type of magic deals +1 to the final damage for each die. The attacker takes less damage from the element that
+        is vulnerable to them, and the maximum result on the enemy&#39;s damage die is lowered by 1 (a rolled 4 counts as 3, and a 6 counts as 5). This
+        vulnerability, however, mostly affects pure damage. (status effects and anomalies that are applied may ignore this mechanic.)</p>
+</body>
+</html>

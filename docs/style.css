@@ -1,0 +1,265 @@
+/* Общие стили всего сайта.
+   Цвета каждой страницы задаются в «темах» ниже:
+   чтобы перекрасить страницу, достаточно поменять значения её переменных. */
+
+
+/* ===== Темы страниц ===== */
+
+/* По умолчанию: справочник, расы, механики (и любая новая страница без класса) */
+:root {
+    --bg: #E9967A;             /* фон страницы */
+    --heading: #DC143C;        /* заголовки h1 */
+    --link: #DC143C;           /* ссылки в тексте */
+    --text: #8B0000;           /* основной текст (класс text) */
+    --tile-bg: #F08080;        /* плитки и кнопка «назад»: фон, */
+    --tile-border: #DC143C;    /*   рамка */
+    --tile-text: #8B0000;      /*   и надпись */
+    --tile-border-width: 3px;  /* толщина рамки плиток */
+}
+
+/* Главная. У плиток на главной свои цвета — см. «Главная страница» */
+.home {
+    --bg: #B0C4DE;
+    --heading: #4169E1;
+    --link: #4169E1;
+    --text: #FF7F50;
+}
+
+.high-city {
+    --bg: #C0C0C0;
+    --heading: #FFD700;
+    --link: #B8860B;
+    --text: #FFFF00;
+    --tile-bg: #FFD700;
+    --tile-border: #B8860B;
+    --tile-text: #B8860B;
+    --tile-border-width: 1px;
+}
+
+.lower-city {
+    --bg: #4B0082;
+    --heading: #EE82EE;
+    --link: #EE82EE;
+    --text: #897cdb;
+    --tile-bg: #8372e4;
+    --tile-border: #8A2BE2;
+    --tile-text: #EE82EE;
+    --tile-border-width: 1px;
+}
+
+.elements {
+    --bg: #E0F2FE;
+    --heading: #FF4500;
+    --link: #FF4500;
+    --text: #741D1D;
+    --tile-bg: #AFEEEE;
+    --tile-border: #FF4500;
+    --tile-text: #8B0000;
+}
+
+
+/* ===== Общее для всех страниц ===== */
+
+body {
+    background-color: var(--bg);
+}
+
+h1 {
+    color: var(--heading);
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+/* Основной текст страницы */
+.text {
+    color: var(--text);
+    font-size: large;
+}
+
+/* Переключатель языков. Стоит в начале каждой страницы и ведёт
+   на ту же самую страницу в другом языке: ../ru/races.html и т.д. */
+.langs {
+    margin: 0 10px 20px 0;
+    text-align: right;
+    font-size: large;
+}
+
+.langs a,
+.langs .lang-current {
+    margin-left: 14px;
+}
+
+/* Язык, на котором открыта страница: не ссылка, просто жирная подпись */
+.lang-current {
+    color: var(--link);
+    font-weight: bold;
+}
+
+/* Кнопка «назад» в правом нижнем углу */
+.back {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--tile-border);
+    background-color: var(--tile-bg);
+    color: var(--tile-text);
+    font-size: xx-large;
+    line-height: 21px; /* надпись крупнее кнопки — так она встаёт по центру */
+    text-align: center;
+}
+
+/* Ряд плиток-ссылок */
+.tiles {
+    display: flex;
+    gap: 150px;
+    margin: 50px 0;
+}
+
+/* Плитка-ссылка: надпись всегда по центру, длинная надпись растягивает плитку */
+.tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    height: 70px;
+    padding: 0 5px;
+    border: var(--tile-border-width) solid var(--tile-border);
+    background-color: var(--tile-bg);
+    color: var(--tile-text);
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+/* ===== Главная страница ===== */
+
+.home h1 {
+    margin-bottom: 4px;
+}
+
+.intro {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 100px;
+}
+
+.home h2 {
+    margin: 70px 0 0 20px;
+    color: var(--heading);
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.home .tiles {
+    gap: 200px;
+    margin: 75px 0 0 60px;
+}
+
+.home .tile {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    border-width: 5px;
+    font-size: 29px;
+}
+
+/* Цвета плиток главной */
+.tile-high     { --tile-bg: #FFD700; --tile-border: #B8860B; --tile-text: #FFFF00; }
+.tile-lower    { --tile-bg: #7B68EE; --tile-border: #8A2BE2; --tile-text: #EE82EE; }
+.tile-book     { --tile-bg: #FFEFD5; --tile-border: #FFA07A; --tile-text: #006400; }
+.tile-races    { --tile-bg: #E9967A; --tile-border: #DC143C; --tile-text: #8B0000; }
+.tile-elements { --tile-bg: #AFEEEE; --tile-border: #FF4500; --tile-text: #741D1D; }
+
+/* Ссылка-пасхалка в углу */
+.hornet {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    color: var(--text);
+    font-size: 10px;
+}
+
+
+/* ===== Схема стихий на странице elements.html (father's code) ===== */
+
+:root{
+    --flame-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNNTAgOGM0IDE0LTEwIDIwLTEwIDM0IDAgOCA2IDEyIDEwIDEyczEwLTQgMTAtMTJjMC02LTQtOC00LTE0IDggNiAxNCAxNiAxNCAyOCAwIDE2LTEzIDI5LTI5IDI5UzEyIDc0IDEyIDU4YzAtMTAgNS0xNyAxMS0yNCAzIDEwLTEgMTUtMSAyMCAwIDYgNSAxMCAxMCAxMHM5LTQgOS0xMGMwLTEyLTktMTYgOS00NnoiLz48L3N2Zz4=");
+    --spiral-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjkiLz48cGF0aCBkPSJNNTAgMjZhMjQgMjQgMCAxIDEgLTE3IDQxIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNyIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==");
+    --spark-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZyBmaWxsPSIjZmZmZmZmIj48cGF0aCBkPSJNNTAgNCBMNTggNDAgTDk0IDMyIEw2NCA1MiBMOTIgNzQgTDU2IDYyIEw1MCA5NiBMNDQgNjIgTDggNzQgTDM2IDUyIEw2IDMyIEw0MiA0MCBaIi8+PC9nPjwvc3ZnPg==");
+    --strand-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNNjIgMTBjLTE2IDAtMjQgMTAtMjQgMjBzMTAgMTYgMjAgMTYtNiAxNC0xNiAxNC0yMC04LTIwLTE2IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zOCA5MGMxNiAwIDI0LTEwIDI0LTIwcy0xMC0xNi0yMC0xNiA2LTE0IDE2LTE0IDIwIDggMjAgMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+");
+}
+
+.grid{
+    position:relative;
+    width:420px;
+    height:420px;
+}
+
+.arrows{
+    position:absolute;
+    inset:0;
+    margin-top: 25%;
+    margin-left: 25%;
+    width:50%;
+    height:50%;
+    pointer-events:none;
+}
+
+.diamond{
+    position:absolute;
+    width:130px;
+    height:130px;
+    transform: rotate(45deg);
+    border-radius:14px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.55), 0 8px 24px rgba(0,0,0,0.35);
+    overflow:hidden;
+}
+
+.diamond::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: var(--icon);
+    background-size:46%;
+    background-repeat:no-repeat;
+    background-position:center;
+    transform: rotate(-45deg);
+}
+
+.diamond--top{
+    top:30px; left:145px;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,255,255,0.25), transparent 60%),
+      linear-gradient(160deg, #ffb32e 0%, #ff5a1f 55%, #9c1f0a 100%);
+    --icon: var(--flame-icon);
+}
+
+.diamond--left{
+    top:145px; left:30px;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,255,255,0.28), transparent 60%),
+      linear-gradient(160deg, #b6f3ff 0%, #35c4e6 55%, #0d6c8c 100%);
+    --icon: var(--spark-icon);
+}
+
+.diamond--right{
+    top:145px; left:260px;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,255,255,0.18), transparent 60%),
+      linear-gradient(160deg, #3ecf5a 0%, #17792f 55%, #0a3d17 100%);
+    --icon: var(--strand-icon);
+}
+
+.diamond--bottom{
+    top:260px; left:145px;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255,255,255,0.22), transparent 60%),
+      linear-gradient(160deg, #9d6bff 0%, #6c2bd9 55%, #33125e 100%);
+    --icon: var(--spiral-icon);
+}
