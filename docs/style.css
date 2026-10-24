@@ -57,6 +57,20 @@
     --tile-text: #8B0000;
 }
 
+.book {
+    --bg: #FFEFD5;
+    --heading: #FF7043;
+    --link: #FFA07A;
+    --text: #FFA07A;
+    --tile-bg: #FFEFD5;
+    --tile-border: #FFA07A;
+    --tile-text: #FF7043;
+}
+
+.book p {
+    color: var(--text);
+}
+
 
 /* ===== Общее для всех страниц ===== */
 
